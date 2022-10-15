@@ -25,3 +25,7 @@ class OfflineValidation:
     def join_str(self, data) -> str:
         join = ''.join(data)
         return join
+
+    def datetime_process(self, data) -> date:
+        date_format = datetime.strptime(data, "%d%m%Y").date()
+        return date_format
