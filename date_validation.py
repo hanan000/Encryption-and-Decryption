@@ -21,3 +21,7 @@ class OfflineValidation:
         self.num = num
         self.random_string = self.get_random_string()
         self.encrypt_the_date = self.encrypt_the_date()
+
+    def join_str(self, data) -> str:
+        join = ''.join(data)
+        return join
