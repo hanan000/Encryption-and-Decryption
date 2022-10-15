@@ -46,6 +46,8 @@ class OfflineValidation:
         modify_date = [str(idx).zfill(2) for idx in data]
         return modify_date
 
-
-
-
+    def get_random_string(self) -> list:
+        letters = string.ascii_lowercase
+        result_str = self.join_str(random.choice(letters) for i in range(self.length))
+        text_str = textwrap.wrap(result_str, 9)
+        return text_str
