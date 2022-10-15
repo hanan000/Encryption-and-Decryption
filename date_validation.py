@@ -51,3 +51,12 @@ class OfflineValidation:
         result_str = self.join_str(random.choice(letters) for i in range(self.length))
         text_str = textwrap.wrap(result_str, 9)
         return text_str
+
+    def encrypt_the_date(self) -> str:
+        year, month, day = self.split_date(self.date)
+        date_process = [int(day) + self.num, int(month) + self.num, int(year[::-1]) - self.num]
+        modify_date = self.modify_date(date_process)
+        encoder = self.join_str([text + str(number) for text, number in list(zip(self.random_string, modify_date))])
+        print(encoder)
+        return encoder
+
