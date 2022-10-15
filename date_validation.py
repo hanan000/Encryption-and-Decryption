@@ -60,3 +60,22 @@ class OfflineValidation:
         print(encoder)
         return encoder
 
+    def decrypt_the_date(self) -> date:
+        remove_char = re.sub('\D', '', self.encrypt_the_date)
+        try:
+            year, month, day = self.two_digits_date(remove_char)
+        except:
+            day, month, year, year_ = self.single_digit_date(remove_char)
+            year = str(year) + str(year_)
+
+        year = int(year) + self.num
+        date_process = [int(day) - self.num, int(month) - self.num, str(year)[::-1]]
+        decoder = self.join_str([str(number) for number in date_process])
+        result = self.datetime_process(decoder)
+        print(result)
+        return result
+
+
+
+
+
