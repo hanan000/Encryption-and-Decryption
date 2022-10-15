@@ -29,3 +29,6 @@ class OfflineValidation:
     def datetime_process(self, data) -> date:
         date_format = datetime.strptime(data, "%d%m%Y").date()
         return date_format
+
+    def split_date(self, data) -> list:
+        return str(data).split()[0].split('-')
