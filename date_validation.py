@@ -41,3 +41,11 @@ class OfflineValidation:
         zfill = str(data)
         get_date = [int(zfill[idx: idx + 2]) for idx in range(0, len(zfill), 2) if len(zfill) == 8]
         return get_date
+
+    def modify_date(self, data):
+        modify_date = [str(idx).zfill(2) for idx in data]
+        return modify_date
+
+
+
+
