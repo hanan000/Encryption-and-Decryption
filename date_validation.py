@@ -76,6 +76,8 @@ class OfflineValidation:
         return result
 
 
-
+if __name__ == '__main__':
+    check_the_validation = OfflineValidation(27, '2024-12-29', 7)
+    check_the_validation.decrypt_the_date()
 
 
