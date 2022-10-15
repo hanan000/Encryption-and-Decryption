@@ -32,3 +32,12 @@ class OfflineValidation:
 
     def split_date(self, data) -> list:
         return str(data).split()[0].split('-')
+
+    def two_digits_date(self, data) -> list:
+        get_date = self.datetime_process(data)
+        return self.split_date(get_date)
+
+    def single_digit_date(self, data) -> list:
+        zfill = str(data)
+        get_date = [int(zfill[idx: idx + 2]) for idx in range(0, len(zfill), 2) if len(zfill) == 8]
+        return get_date
